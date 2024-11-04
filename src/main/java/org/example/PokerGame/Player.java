@@ -6,7 +6,11 @@ import java.util.List;
 public class Player {
     private final ArrayList<Card> allCard;
 
-    public Player(Card card1, Card card2, Card card3, Card card4, Card card5) {
+    public static Player init(List<Card> cardList) {
+        return new Player(cardList.get(0), cardList.get(1),cardList.get(2),cardList.get(3),cardList.get(4));
+    }
+
+    private Player(Card card1, Card card2, Card card3, Card card4, Card card5) {
         this.allCard = new ArrayList<>();
         allCard.add(card1);
         allCard.add(card2);
