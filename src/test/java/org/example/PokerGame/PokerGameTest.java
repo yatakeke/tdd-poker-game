@@ -1,5 +1,6 @@
 package org.example.PokerGame;
 
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -7,18 +8,22 @@ import java.util.List;
 import static com.google.common.truth.Truth.assertThat;
 
 class PokerGameTest {
-    @Test
-    public void testPlayer1WinByOnePair() {
 
-        var players = List.of(playerWithOnePair(), playerWithHighCard());
-        assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 1!!");
-    }
+    @Nested
+    class GameFinish {
+        @Test
+        public void testPlayer1WinByOnePair() {
 
-    @Test
-    public void testPlayer2WinByOnePair() {
+            var players = List.of(playerWithOnePair(), playerWithHighCard());
+            assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 1!!");
+        }
 
-        var players = List.of(playerWithHighCard(), playerWithOnePair(), playerWithHighCard());
-        assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 2!!");
+        @Test
+        public void testPlayer2WinByOnePair() {
+
+            var players = List.of(playerWithHighCard(), playerWithOnePair(), playerWithHighCard());
+            assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 2!!");
+        }
     }
 
     private static Player playerWithHighCard() {
