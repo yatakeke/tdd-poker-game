@@ -17,4 +17,16 @@ class PokerDeckTest {
         assertThat(deck.size()).isEqualTo(50);
     }
 
+    @Test
+    public void testShuffle() {
+        var deck = PokerDeck.init();
+        deck.shuffle(1);
+
+        assertThat(deck.draw()).isNotEqualTo(new Card(1, CardMark.SPADE));
+        assertThat(deck.draw()).isEqualTo(new Card(1, CardMark.CLUB));
+
+        assertThat(deck.draw()).isNotEqualTo(new Card(2, CardMark.SPADE));
+        assertThat(deck.draw()).isEqualTo(new Card(7, CardMark.CLUB));
+    }
+
 }
