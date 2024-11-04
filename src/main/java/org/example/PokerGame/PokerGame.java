@@ -6,7 +6,17 @@ import java.util.List;
 
 public class PokerGame {
     public static List<Player> start(Integer playerNumber, PokerDeck deck) {
-        return null;
+        var result = new ArrayList<Player>();
+        for (var i = 0; i < playerNumber; i++) {
+            result.add(Player.init(List.of(
+                    deck.draw(),
+                    deck.draw(),
+                    deck.draw(),
+                    deck.draw(),
+                    deck.draw()
+            )));
+        }
+        return result;
     }
 
     public static Player throwCard(Player player) {
