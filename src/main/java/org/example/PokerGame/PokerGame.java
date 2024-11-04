@@ -5,14 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class PokerGame {
-    public static List<Player> start(Integer playerNumber, List<Card> deck) {
+    public static List<Player> start(Integer playerNumber, PokerDeck deck) {
         return null;
     }
 
     public static Player throwCard(Player player) {
         return null;
     }
-    public static Player draw(Player player, List<Card> deck) {
+    public static Player draw(Player player, PokerDeck deck) {
         return null;
     }
 

@@ -26,6 +26,17 @@ class PokerGameTest {
         }
     }
 
+    @Test
+    public void testGameStartWithPlayers() {
+
+        var deck = new PokerDeck();
+        var players = PokerGame.start(3, deck);
+
+        assertThat(players).hasSize(3);
+        assertThat(players.get(0).allCard()).hasSize(5);
+        assertThat(players.get(1).allCard()).hasSize(5);
+        assertThat(players.get(2).allCard()).hasSize(5);
+    }
     private static Player playerWithHighCard() {
         return Player.init(
                 List.of(
