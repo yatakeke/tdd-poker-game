@@ -7,6 +7,20 @@ public class PokerDeck {
 
     private List<Card> cardList;
 
+    public PokerDeck(List<Card> cardList) {
+        this.cardList = cardList;
+    }
+
+    public Card draw() {
+        var card = this.cardList.get(0);
+        this.cardList = this.cardList.subList(1, this.cardList.size());
+        return card;
+    }
+
+    public Integer size() {
+        return this.cardList.size();
+    }
+
     public static PokerDeck init() {
         var cardList = new ArrayList<Card>();
 
@@ -27,19 +41,5 @@ public class PokerDeck {
         }
 
         return new PokerDeck(cardList);
-    }
-
-    public PokerDeck(List<Card> cardList) {
-        this.cardList = cardList;
-    }
-
-    public Card draw() {
-        var card = this.cardList.get(0);
-        this.cardList = this.cardList.subList(1, this.cardList.size());
-        return card;
-    }
-
-    public Integer size() {
-        return this.cardList.size();
     }
 }
