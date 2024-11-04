@@ -20,19 +20,19 @@ class PokerGameTest {
     private static Player playerWithHighCard() {
         return new Player(
                 new Card(1, CardMark.SPADE),
-                new Card(5, CardMark.HEART),
-                new Card(2, CardMark.DIAMOND),
-                new Card(3, CardMark.CLUB),
-                new Card(4, CardMark.SPADE)
+                new Card(2, CardMark.SPADE),
+                new Card(3, CardMark.DIAMOND),
+                new Card(4, CardMark.CLUB),
+                new Card(5, CardMark.HEART)
         );
     }
 
     private static Player playerWithOnePair() {
         return new Player(
                 new Card(1, CardMark.SPADE),
-                new Card(1, CardMark.HEART),
-                new Card(2, CardMark.DIAMOND),
-                new Card(3, CardMark.CLUB),
+                new Card(1, CardMark.CLUB),
+                new Card(2, CardMark.HEART),
+                new Card(3, CardMark.DIAMOND),
                 new Card(4, CardMark.SPADE)
         );
     }
