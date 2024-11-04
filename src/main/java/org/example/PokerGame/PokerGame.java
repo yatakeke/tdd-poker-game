@@ -13,18 +13,17 @@ public class PokerGame {
 
         var pokerHandsJudge = new PokerHandJudge();
 
-        var pokerHands = new ArrayList<PokerHand>();
+        var pokerHands = new ArrayList<Integer>();
         for (var player: players) {
-            pokerHands.add(pokerHandsJudge.judge(player));
+            pokerHands.add(pokerHandsJudge.judge(player).getRank());
         }
 
         var winner = getWinner(pokerHands);
         return String.format("The winner is player %s!!", winner);
     }
 
-    private Integer getWinner(List<PokerHand> handsRank) {
+    private Integer getWinner(List<Integer> handsRank) {
         var maxItem = Collections.max(handsRank);
-        var result = handsRank.stream().filter(i -> i == maxItem).findFirst();
-        return 1;
+        return handsRank.indexOf(maxItem) + 1;
     }
 }
