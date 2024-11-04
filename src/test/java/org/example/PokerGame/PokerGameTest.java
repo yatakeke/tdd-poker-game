@@ -29,7 +29,7 @@ class PokerGameTest {
     @Test
     public void testGameStartWithPlayers() {
 
-        var deck = new PokerDeck();
+        var deck = PokerDeck.init();
         var players = PokerGame.start(3, deck);
 
         assertThat(players).hasSize(3);
@@ -37,6 +37,11 @@ class PokerGameTest {
         assertThat(players.get(1).allCard()).hasSize(5);
         assertThat(players.get(2).allCard()).hasSize(5);
     }
+
+    private static PokerDeck init() {
+        return new PokerDeck();
+    }
+
     private static Player playerWithHighCard() {
         return Player.init(
                 List.of(
