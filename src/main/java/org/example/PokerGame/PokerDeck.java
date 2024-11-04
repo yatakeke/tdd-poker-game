@@ -50,6 +50,8 @@ public class PokerDeck {
             cardList.add(new Card(i, CardMark.DIAMOND));
         }
 
+        // TODO: added joker
+
         return new PokerDeck(cardList);
     }
 }
