@@ -38,10 +38,6 @@ class PokerGameTest {
         assertThat(players.get(2).allCard()).hasSize(5);
     }
 
-    private static PokerDeck init() {
-        return new PokerDeck();
-    }
-
     private static Player playerWithHighCard() {
         return Player.init(
                 List.of(

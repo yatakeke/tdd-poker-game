@@ -11,7 +11,7 @@ class PokerDeckTest {
     @Test
     @Disabled
     public void testDraw() {
-        var deck = new PokerDeck();
+        var deck = PokerDeck.init();
         var firstTopCard = deck.draw();
         var secondTopCard = deck.draw();
 
