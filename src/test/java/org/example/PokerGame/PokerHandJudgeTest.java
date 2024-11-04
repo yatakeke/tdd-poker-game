@@ -17,8 +17,8 @@ class PokerHandJudgeTest {
                 new Card(3, CardMark.DIAMOND),
                 new Card(4, CardMark.SPADE)
         );
-        String result = new PokerHandJudge().judge(Hands);
-        assertThat(result).isEqualTo("One Pair");
+        var result = new PokerHandJudge().judge(Hands);
+        assertThat(result).isEqualTo(PokerHand.ONE_PAIR);
     }
 
 }

@@ -2,7 +2,7 @@ package org.example.PokerGame;
 
 public class PokerHandJudge {
 
-    public String judge(Hands hands) {
-        return "One Pair";
+    public PokerHand judge(Hands hands) {
+        return PokerHand.ONE_PAIR;
     }
 }
