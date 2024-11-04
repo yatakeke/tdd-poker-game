@@ -1,6 +1,7 @@
 package org.example.PokerGame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PokerGame {
@@ -17,7 +18,13 @@ public class PokerGame {
             pokerHands.add(pokerHandsJudge.judge(player));
         }
 
-        var winner = 1;
+        var winner = getWinner(pokerHands);
         return String.format("The winner is player %s!!", winner);
+    }
+
+    private Integer getWinner(List<PokerHand> handsRank) {
+        var maxItem = Collections.max(handsRank);
+        var result = handsRank.stream().filter(i -> i == maxItem).findFirst();
+        return 1;
     }
 }
