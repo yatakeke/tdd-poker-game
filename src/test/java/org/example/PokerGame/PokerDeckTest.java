@@ -14,7 +14,7 @@ class PokerDeckTest {
 
         assertThat(firstTopCard).isEqualTo(new Card(1, CardMark.SPADE));
         assertThat(secondTopCard).isEqualTo(new Card(2, CardMark.SPADE));
-        assertThat(deck.size()).isEqualTo(0);
+        assertThat(deck.size()).isEqualTo(50);
     }
 
 }

@@ -1,5 +1,6 @@
 package org.example.PokerGame;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PokerDeck {
@@ -7,12 +8,25 @@ public class PokerDeck {
     private List<Card> cardList;
 
     public static PokerDeck init() {
-        return new PokerDeck(
-                List.of(
-                        new Card(1, CardMark.SPADE),
-                        new Card(2, CardMark.SPADE)
-                )
-        );
+        var cardList = new ArrayList<Card>();
+
+        for (var i = 1; i <= 13; i++) {
+            cardList.add(new Card(i, CardMark.SPADE));
+        }
+
+        for (var i = 1; i <= 13; i++) {
+            cardList.add(new Card(i, CardMark.HEART));
+        }
+
+        for (var i = 1; i <= 13; i++) {
+            cardList.add(new Card(i, CardMark.CLUB));
+        }
+
+        for (var i = 1; i <= 13; i++) {
+            cardList.add(new Card(i, CardMark.DIAMOND));
+        }
+
+        return new PokerDeck(cardList);
     }
 
     public PokerDeck(List<Card> cardList) {
