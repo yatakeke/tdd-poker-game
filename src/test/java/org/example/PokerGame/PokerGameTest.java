@@ -10,11 +10,8 @@ class PokerGameTest {
     @Test
     public void testPlayer1WinByOnePair() {
 
-        var game = PokerGame.start(2);
         var players = List.of(playerWithOnePair(), playerWithHighCard());
-        // MEMO: both player didn't throw card
-
-        assertThat(game.play(players)).isEqualTo("The winner is player 1!!");
+        assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 1!!");
     }
 
     private static Player playerWithHighCard() {

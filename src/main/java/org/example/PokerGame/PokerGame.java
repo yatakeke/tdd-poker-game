@@ -5,11 +5,18 @@ import java.util.Collections;
 import java.util.List;
 
 public class PokerGame {
-    public static PokerGame start(Integer playerNumber) {
-        return new PokerGame();
+    public static List<Player> start(Integer playerNumber, List<Card> deck) {
+        return null;
     }
 
-    public String play(List<Player> players) {
+    public static Player throwCard(Player player) {
+        return null;
+    }
+    public static Player draw(Player player, List<Card> deck) {
+        return null;
+    }
+
+    public static String finish(List<Player> players) {
 
         var pokerHandsJudge = new PokerHandJudge();
 
@@ -22,7 +29,7 @@ public class PokerGame {
         return String.format("The winner is player %s!!", winner);
     }
 
-    private Integer getWinner(List<Integer> handsRank) {
+    private static Integer getWinner(List<Integer> handsRank) {
         var maxItem = Collections.max(handsRank);
         return handsRank.indexOf(maxItem) + 1;
     }
