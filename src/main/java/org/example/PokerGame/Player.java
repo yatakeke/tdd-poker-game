@@ -1,6 +1,8 @@
 package org.example.PokerGame;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Player {
@@ -21,5 +23,17 @@ public class Player {
 
     public List<Card> allCard() {
         return this.allCard;
+    }
+
+    public void throwCard(int index) {
+        this.allCard.remove(index);
+    }
+
+    public void throwCard(Integer... indices) {
+        List<Integer> indicesList = Arrays.asList(indices);
+        indicesList.sort(Collections.reverseOrder());
+        for (var i: indicesList) {
+            this.throwCard(i);
+        }
     }
 }
