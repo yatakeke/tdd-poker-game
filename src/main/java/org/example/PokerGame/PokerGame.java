@@ -22,8 +22,8 @@ public class PokerGame {
     public static Player throwCard(Player player) {
         return null;
     }
-    public static Player draw(Player player, PokerDeck deck) {
-        return null;
+    public static void draw(Player player, PokerDeck deck) {
+        // TODO: implemented code from here
     }
 
     public static String finish(List<Player> players) {
