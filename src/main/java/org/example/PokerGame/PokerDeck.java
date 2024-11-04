@@ -20,10 +20,12 @@ public class PokerDeck {
     }
 
     public Card draw() {
-        return this.cardList.get(0);
+        var card = this.cardList.get(0);
+        this.cardList = this.cardList.subList(1, this.cardList.size());
+        return card;
     }
 
     public Integer size() {
-        return null;
+        return this.cardList.size();
     }
 }
