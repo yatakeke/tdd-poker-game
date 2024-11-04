@@ -19,4 +19,17 @@ class PokerHandJudgeTest {
         assertThat(result).isEqualTo(PokerHand.ONE_PAIR);
     }
 
+    @Test
+    public void testHighCard() {
+        var player = new Player(
+                new Card(1, CardMark.SPADE),
+                new Card(2, CardMark.SPADE),
+                new Card(3, CardMark.DIAMOND),
+                new Card(4, CardMark.CLUB),
+                new Card(5, CardMark.HEART)
+        );
+
+        var result = new PokerHandJudge().judge(player);
+        assertThat(result).isEqualTo(PokerHand.HIGH_CARD);
+    }
 }
