@@ -11,11 +11,11 @@ class PokerHandJudgeTest {
     @Test
     public void testOnePair() {
         Hands Hands = new Hands(
-                new Card(1, "spade"),
-                new Card(1, "club"),
-                new Card(2, "heart"),
-                new Card(3, "diamond"),
-                new Card(4, "spade")
+                new Card(1, CardMark.SPADE),
+                new Card(1, CardMark.CLUB),
+                new Card(2, CardMark.HEART),
+                new Card(3, CardMark.DIAMOND),
+                new Card(4, CardMark.SPADE)
         );
         String result = new PokerHandJudge().judge(Hands);
         assertThat(result).isEqualTo("One Pair");
