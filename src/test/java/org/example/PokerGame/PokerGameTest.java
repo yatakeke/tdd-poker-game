@@ -14,6 +14,13 @@ class PokerGameTest {
         assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 1!!");
     }
 
+    @Test
+    public void testPlayer2WinByOnePair() {
+
+        var players = List.of(playerWithHighCard(), playerWithOnePair(), playerWithHighCard());
+        assertThat(PokerGame.finish(players)).isEqualTo("The winner is player 2!!");
+    }
+
     private static Player playerWithHighCard() {
         return new Player(
                 new Card(1, CardMark.SPADE),

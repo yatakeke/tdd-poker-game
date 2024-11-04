@@ -2,7 +2,7 @@ package org.example.PokerGame;
 
 public enum PokerHand {
     HIGH_CARD("HIGH_CARD", 0),
-    ONE_PAIR("ONE_PAIR", 0);
+    ONE_PAIR("ONE_PAIR", 1);
 
     private final String pokerHand;
     private final Integer rank;
